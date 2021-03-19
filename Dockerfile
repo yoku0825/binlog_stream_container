@@ -20,3 +20,5 @@ RUN wget -q https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.22-linu
     rm -r mysql-5.7.32-linux-glibc2.12-x86_64
 COPY entrypoint.sh /opt/binlog_stream/entrypoint.sh
 COPY binlog_stream_wrapper.sh /opt/binlog_stream/binlog_stream_wrapper.sh
+
+ENTRYPOINT /opt/binlog_stream/entrypoint.sh
