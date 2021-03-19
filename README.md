@@ -37,5 +37,5 @@
   - ex. `sudo docker build -t binlog_stream_container .`
 
 - Start container with target volume.
-  - ex. `sudo docker run -d -v /data/binlog/192_168_1_101:/target`
+  - ex. `sudo docker run -d -v /data/binlog/192_168_1_101:/target binlog_stream_container`
 
