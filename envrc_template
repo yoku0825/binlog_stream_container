@@ -1,0 +1,12 @@
+### Connection parameters
+### mysql_user need "REPLICATION CLIENT" and "REPLICATION SLAVE" privileges.
+mysql_user="binlog_stream"
+MYSQL_PWD="binlog_password"
+mysql_socket=""
+mysql_host="172.17.0.1"
+mysql_port="3306"
+
+### binlog_stream_wrapper parameters
+empty_action="first"    ### "first" or "last"
+sleep_interval=10
+abort_interval=3
