@@ -22,7 +22,7 @@
 function search_target_binlog
 {
   ### If binlog is holded in /target, use latest one of them.
-  target_binlog=$(ls /target/*.[0-9]* | tail -1 2> /dev/null)
+  target_binlog=$(basename $(ls /target/*.[0-9]* | tail -1 2> /dev/null))
   echo "Pick target_binlog=$target_binlog from /target directory" >&2
    
   ### No binlog in /target, query to mysqld.
@@ -61,9 +61,11 @@ mysql_port=""
 empty_action="first"
 sleep_interval=10
 abort_interval=3
-export MYSQL_PWD
 
+### Specified parameteres
 [[ -r /target/.envrc ]] && . /target/.envrc
+
+export MYSQL_PWD
 
 connect_option=""
 [[ -n $mysql_user ]] && connect_option="$connect_option -u$mysql_user"
